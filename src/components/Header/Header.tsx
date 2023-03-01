@@ -1,8 +1,9 @@
 import styles from "@styles/Home.module.css";
 import { useRouter } from "next/router";
 
-export const Header = () => {
+const Header: React.FC = () => {
   const router = useRouter();
+
   return (
     <header>
       <div className={styles.navBelt}>
@@ -48,3 +49,4 @@ export const Header = () => {
     </header>
   );
 };
+export default Header;

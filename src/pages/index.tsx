@@ -1,9 +1,9 @@
 import Head from "next/head";
 import styles from "@styles/Home.module.css";
 import { useRouter } from "next/router";
-import { CharacterResponse } from "@types";
+import Header from "@components/Header/Header";
 
-const Home = (props: CharacterResponse) => {
+const Home = () => {
   const router = useRouter();
 
   return (
@@ -14,11 +14,12 @@ const Home = (props: CharacterResponse) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <main className={styles.main}>
         <section>
           <button onClick={() => router.push("/episode")}>Episodes</button>
           <button onClick={() => router.push("/character")}>Characters</button>
-          <button onClick={() => router.push("/location")}>Locations</button>
+          <button onClick={() => router.push("/location")}>Worlds</button>
         </section>
       </main>
     </>
