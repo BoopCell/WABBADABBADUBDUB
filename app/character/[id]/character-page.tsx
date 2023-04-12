@@ -46,7 +46,7 @@ const CharacterPage = ({
 				<li key={starringEpisode.id}>
 					<a
 						onClick={() =>
-							router.push(`../episode/${starringEpisode.url.slice(-2)}`)
+							router.push(`/episode/${starringEpisode.url.slice(-2)}`)
 						}
 					>
 						<h4>{starringEpisode.name}</h4>

@@ -3,7 +3,7 @@ import RootLayout from 'app/layout';
 import { Character, Episode as EpisodeProps } from 'app/types';
 import Episode from './episode-page';
 
-export const getEpisodes = async (id: number) => {
+const getEpisodes = async (id: number) => {
 	const res = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
 	const episodeData: EpisodeProps = await res.json();
 	const { characters } = episodeData;
@@ -19,7 +19,7 @@ export const getEpisodes = async (id: number) => {
 	return { episodeData, starringCharacters };
 };
 
-const Page = async ({ params: { id } }: { params: { id: number } }) => {
+const Page = async ({ params: { id } }: { params: any }) => {
 	const { episodeData, starringCharacters } = await getEpisodes(id);
 	return (
 		<RootLayout>
@@ -31,5 +31,4 @@ const Page = async ({ params: { id } }: { params: { id: number } }) => {
 		</RootLayout>
 	);
 };
-
 export default Page;

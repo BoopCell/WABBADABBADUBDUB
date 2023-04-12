@@ -2,9 +2,7 @@
 
 import EpisodeCard from 'app/components/EpisodeCard';
 import CardGrid from 'app/components/CardGrid';
-import Header from 'app/components/Header/Header';
 import { EpisodeResponse } from 'app/types';
-import { useRouter } from 'next/navigation';
 
 export const EpisodePage = (episodes: EpisodeResponse) => {
 	return (

@@ -9,7 +9,7 @@ const getEpisodes = async () => {
 	return episodes;
 };
 
-export const Page = async () => {
+const Page = async () => {
 	const episodes = await getEpisodes();
 	return (
 		<RootLayout>

@@ -1,5 +1,7 @@
 import { useRouter } from 'next/navigation';
+
 import styles from './EpisodeCard.module.css';
+
 const EpisodeCard: React.FC<any> = ({ name, episodeNumber, airDate, id }) => {
 	const router = useRouter();
 	return (

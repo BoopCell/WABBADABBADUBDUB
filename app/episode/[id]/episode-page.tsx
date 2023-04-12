@@ -25,9 +25,7 @@ const Episode = ({
 							<li key={starringCharacter.id}>
 								<a
 									onClick={() =>
-										router.push(
-											`../character/${starringCharacter.url.slice(-2)}`,
-										)
+										router.push(`/character/${starringCharacter.url.slice(-2)}`)
 									}
 								>
 									<h4>{starringCharacter.name}</h4>

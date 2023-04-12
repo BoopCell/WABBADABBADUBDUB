@@ -13,7 +13,7 @@ const getLocations = async (): Promise<LocationResponse> => {
 	return result;
 };
 
-export const Page = async () => {
+const Page = async () => {
 	const { results } = await getLocations();
 	return (
 		<RootLayout>

@@ -7,7 +7,7 @@ export const metadata = {
 	title: 'My Page Title',
 };
 
-export const getLocation = async (id: number) => {
+const getLocation = async (id: number) => {
 	const res = await fetch(`https://rickandmortyapi.com/api/location/${id}`);
 	/* const 	res = await fetch("https://rickandmortyapi.com/api/location");
   const res = await fetch("https://rickandmortyapi.com/api/episode"); */
