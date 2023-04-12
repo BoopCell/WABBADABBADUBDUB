@@ -1,0 +1,33 @@
+.listItem {
+    list-style: none;
+}
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 10rem;
+    list-style: none;
+    margin: 1rem;
+    background-color: #727272;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.name {
+    font-size: 1.25rem;
+}
+
+.episodeTag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 5rem;
+    height: 2rem;
+    background-color: #58FF69;
+    color: #000000;
+    border-radius: 5px;
+}
