@@ -1,0 +1,21 @@
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigationWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 25rem;
+}
+
+.image {
+    width: 15rem;
+    height: auto;
+    object-fit: cover;
+}

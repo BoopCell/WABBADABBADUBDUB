@@ -1,5 +1,6 @@
 'use client';
 
+import CardGrid from 'app/components/CardGrid';
 import { Character, Episode as EpisodeProps } from 'app/types';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -22,7 +23,7 @@ const Episode = ({
 					<h3>Creation date: {episodeData.created}</h3>
 					<ul>
 						{starringCharacters.map((starringCharacter) => (
-							<li key={starringCharacter.id}>
+							<CardGrid key={starringCharacter.id}>
 								<a
 									onClick={() =>
 										router.push(`/character/${starringCharacter.url.slice(-2)}`)
@@ -36,7 +37,7 @@ const Episode = ({
 										height={50}
 									/>
 								</a>
-							</li>
+							</CardGrid>
 						))}
 					</ul>
 				</figcaption>

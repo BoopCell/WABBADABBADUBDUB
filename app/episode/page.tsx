@@ -14,7 +14,7 @@ const Page = async () => {
 	return (
 		<RootLayout>
 			<Header />
-			<EpisodePage {...episodes} />;
+			<EpisodePage {...episodes} />
 		</RootLayout>
 	);
 };

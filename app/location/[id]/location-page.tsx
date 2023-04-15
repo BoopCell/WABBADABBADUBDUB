@@ -1,5 +1,6 @@
 'use client';
 
+import CardGrid from 'app/components/CardGrid';
 import { Location as LocationData, Character } from 'app/types';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -24,7 +25,7 @@ export const Location = ({
 			) : null}
 
 			{characters.map((character) => (
-				<li key={`${character.name}, image :${character.image} `}>
+				<CardGrid key={`${character.name}, image :${character.image} `}>
 					<h4>{character.name}</h4>
 					<Image
 						alt={character.image}
@@ -32,7 +33,7 @@ export const Location = ({
 						width={50}
 						height={50}
 					/>
-				</li>
+				</CardGrid>
 			))}
 			<button
 				type="button"
