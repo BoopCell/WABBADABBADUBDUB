@@ -3,6 +3,7 @@
   justify-content: space-between;
   background-color: var(--foreground-rgb);
   font-family: var(--font-mono);
+  margin: 2rem 8rem;
 }
 .navLeft {
   display: flex;

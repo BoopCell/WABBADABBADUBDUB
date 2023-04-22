@@ -1,37 +1,45 @@
-'use client';
-
 import CardGrid from 'app/components/CardGrid';
-import Header from 'app/components/Header/Header';
+import CharacterCardLarge from 'app/components/CharacterCardLarge';
 import { Character } from 'app/types';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
-const CharacterPage = ({ characters }: { characters: Character[] }) => {
-	const router = useRouter();
-	return (
-		<>
-			<h1>Characters</h1>
+const CharacterPage = ({ characters }: { characters: Character[] }) => (
+	<>
+		<h1>Characters</h1>
+		<CardGrid>
 			{characters.map(
-				({ id, name, species, created, gender, status, image }) => {
-					return (
-						<CardGrid key={id}>
-							<a onClick={() => router.push(`/character/${id}`)}>
-								<figure>
-									<figcaption>
-										<h3>{name}</h3>
-										<p>Date of creation: {created}</p>
-										<p>Species: {species}</p>
-										<p>Gender: {gender}</p>
-										<p>Status: {status}</p>
-									</figcaption>
-									<Image alt={name} src={image} width={200} height={200} />
-								</figure>
-							</a>
-						</CardGrid>
-					);
-				},
+				({
+					id,
+					name,
+					species,
+					created,
+					gender,
+					status,
+					image,
+					type,
+					episode,
+					origin,
+					location,
+					url,
+				}) => (
+					<a href={`/character/${id}`} key={id}>
+						<CharacterCardLarge
+							id={id}
+							name={name}
+							status={status}
+							species={species}
+							type={type}
+							gender={gender}
+							origin={origin}
+							location={location}
+							episode={episode}
+							image={image}
+							url={url}
+							created={created}
+						/>
+					</a>
+				),
 			)}
-		</>
-	);
-};
+		</CardGrid>
+	</>
+);
 export default CharacterPage;

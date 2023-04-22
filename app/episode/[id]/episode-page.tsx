@@ -1,9 +1,9 @@
 'use client';
 
 import CardGrid from 'app/components/CardGrid';
+import CharacterCardSmall from 'app/components/CharacterCardSmall';
+import EpisodeCard from 'app/components/EpisodeCard';
 import { Character, Episode as EpisodeProps } from 'app/types';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 const Episode = ({
 	episodeData,
@@ -12,42 +12,43 @@ const Episode = ({
 	episodeData: EpisodeProps;
 	starringCharacters: Character[];
 }): JSX.Element => {
-	const router = useRouter();
 	return (
 		<>
-			<figure>
-				<figcaption>
-					<h1>{episodeData.name}</h1>
-					<h2>Episode: {episodeData.episode}</h2>
-					<h3>Air date: {episodeData.air_date}</h3>
-					<h3>Creation date: {episodeData.created}</h3>
-					<ul>
-						{starringCharacters.map((starringCharacter) => (
-							<CardGrid key={starringCharacter.id}>
-								<a
-									onClick={() =>
-										router.push(`/character/${starringCharacter.url.slice(-2)}`)
-									}
-								>
-									<h4>{starringCharacter.name}</h4>
-									<Image
-										alt={starringCharacter.image}
-										src={starringCharacter.image}
-										width={50}
-										height={50}
-									/>
-								</a>
-							</CardGrid>
-						))}
-					</ul>
-				</figcaption>
-			</figure>
-			<button
-				type="button"
-				title="Go back"
-				role="link"
-				onClick={() => router.back()}
-			>
+			<EpisodeCard
+				id={episodeData.id}
+				name={episodeData.name}
+				air_date={episodeData.name}
+				episode={episodeData.episode}
+				characters={episodeData.characters}
+				url={episodeData.url}
+				created={episodeData.created}
+			/>
+			<CardGrid>
+				{starringCharacters.map((starringCharacter) => (
+					<>
+						<a
+							title="Go to a character"
+							href={`/character/${starringCharacter.url.slice(-2)}`}
+						>
+							<CharacterCardSmall
+								id={starringCharacter.id}
+								name={starringCharacter.name}
+								status={starringCharacter.status}
+								species={starringCharacter.species}
+								type={starringCharacter.type}
+								gender={starringCharacter.gender}
+								origin={starringCharacter.origin}
+								location={starringCharacter.location}
+								image={starringCharacter.image}
+								episode={starringCharacter.episode}
+								url={starringCharacter.url}
+								created={starringCharacter.created}
+							/>
+						</a>
+					</>
+				))}
+			</CardGrid>
+			<button type="button" title="Go back" role="link">
 				Back
 			</button>
 		</>

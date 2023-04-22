@@ -3,14 +3,18 @@ import { ClassElement } from 'typescript';
 export const MaleIcon = ({
 	fillColor,
 	className,
+	height = '30px',
+	width = '30px',
 }: {
 	fillColor: string;
 	className?: string;
+	height?: string;
+	width?: string;
 }) => (
 	<svg
 		className={className}
-		width="30px"
-		height="30px"
+		width={width}
+		height={height}
 		version="1.1"
 		viewBox="0 0 20 20"
 		xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import CharacterCard from 'app/components/CharacterCard';
+import CharacterCard from 'app/components/CharacterCardLarge';
 import { Character, Episode } from 'app/types';
+import EpisodeCard from 'app/components/EpisodeCard';
+import CardGrid from 'app/components/CardGrid';
 
 const CharacterPage = ({
 	characterData,
@@ -42,17 +44,20 @@ const CharacterPage = ({
 				url={url}
 				created={created}
 			/>
-			{starringEpisodes.map((starringEpisode) => (
-				<li key={starringEpisode.id}>
-					<a
-						onClick={() =>
-							router.push(`/episode/${starringEpisode.url.slice(-2)}`)
-						}
-					>
-						<h4>{starringEpisode.name}</h4>
-					</a>
-				</li>
-			))}
+			<CardGrid>
+				{starringEpisodes.map((starringEpisode) => (
+					<EpisodeCard
+						key={starringEpisode.id}
+						id={starringEpisode.id}
+						name={starringEpisode.name}
+						air_date={starringEpisode.air_date}
+						episode={starringEpisode.episode}
+						characters={starringEpisode.characters}
+						url={starringEpisode.url}
+						created={starringEpisode.created}
+					/>
+				))}
+			</CardGrid>
 			<button
 				type="button"
 				title="Go back"

@@ -1,6 +1,6 @@
 import { Character } from 'app/types';
 import Image from 'next/image';
-import styles from './CharacterCard.module.css';
+import styles from './CharacterCardLarge.module.css';
 import { MaleIcon } from '../MaleIcon';
 import { FemaleIcon } from '../FemaleIcon';
 
@@ -18,7 +18,6 @@ const CharacterCard: React.FC<Character> = ({
 	url,
 	created,
 }) => {
-	console.log('🚀 ~ file: CharacterCard.tsx:21 ~ gender:', gender);
 	return (
 		<>
 			<figure className={styles.card}>

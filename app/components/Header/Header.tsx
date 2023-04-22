@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 						</Link>
 					</div>
 					<div className={styles.navLocation}>
-						<h1>Wabbadabbadubdub</h1>
+						<h1>Rick & Morty Wiki</h1>
 					</div>
 				</div>
 				<div className={styles.navRight}>

@@ -9,17 +9,19 @@ export const EpisodePage = (episodes: EpisodeResponse) => {
 		<>
 			<h1>Episodes</h1>
 			<CardGrid>
-				{episodes.results.map((episode) => {
-					return (
+				{episodes.results.map((episode) => (
+					<a href={`/episode/${episode.id}`} key={episode.id}>
 						<EpisodeCard
-							key={episode.id}
 							name={episode.name}
-							airDate={episode.air_date}
-							episodeNumber={episode.episode}
+							air_date={episode.air_date}
+							episode={episode.episode}
 							id={episode.id}
+							characters={episode.characters}
+							url={episode.url}
+							created={episode.created}
 						></EpisodeCard>
-					);
-				})}
+					</a>
+				))}
 			</CardGrid>
 		</>
 	);

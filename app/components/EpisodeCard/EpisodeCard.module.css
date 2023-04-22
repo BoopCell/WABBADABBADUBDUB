@@ -2,7 +2,7 @@
     list-style: none;
 }
 
-.link {
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,6 +15,9 @@
     color: rgb(255, 255, 255);
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 0 20px 0 rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0px 0 20px 0 rgba(255,255,255,0.5);
+    -moz-box-shadow: 0px 0 20px 0 rgba(255,255,255,0.5);
 }
 
 .name {
@@ -31,4 +34,15 @@
     background-color: rgb(0, 255, 183);
     color: #000000;
     border-radius: 5px;
+    -webkit-text-shadow: 0.5px 0.5px 0.5px #FF6262;
+    -moz-text-shadow:0.5px 0.5px 0.5px #FF6262;
+    text-shadow: 0.5px 0.5px 0.5px #FF6262;
+}
+
+.episodeNumber {
+    
+}
+
+.airDate {
+
 }
